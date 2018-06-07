@@ -9,7 +9,7 @@
 #include <fcntl.h>
 #define MAXLINE 10
 #define PORT 8000
-
+//参考代码https://blog.csdn.net/upupday19/article/details/78916142
 int main(void){
 	//定义客户端套接字
 	int sockfd = -1;
@@ -39,7 +39,7 @@ int main(void){
 	}
          int x;  
     x=fcntl(sockfd,F_GETFL,0);  
-    fcntl(sockfd,F_SETFL,x | O_NONBLOCK);  
+    fcntl(sockfd,F_SETFL,x | O_NONBLOCK);  //将阻塞通信模式转化为非阻塞通信模式
 	while(1){
 		//向服务器发送信息
 		printf("向服务器发送信息：");
